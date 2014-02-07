@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+	// radio
+	\$("input:radio").not(".radio input").wrap(function() {
+	    var claz ="";
+	    if (\$(this).attr("class")) {
+	        claz = \$(this).attr("class")
+	    };
+	    return "<div class='radio "+claz +"'>";
+	})
+	\$("input:radio").click(function() {
+	    name = \$(this).attr("name");
+	    \$("input:radio[name="+ name +"]").parent(".radio").removeClass("checked");
+	    \$(this).parent(".radio").addClass("checked")
+	})
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>radio</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

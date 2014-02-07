@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+	//checkbox
+
+	\$("input:checkbox").not(".checkbox input").wrap(function() {
+	    var claz ="";
+	    if (\$(this).attr("class")) {
+	        claz = \$(this).attr("class")
+	    };
+	    return "<div class='checkbox "+ claz +"'>";
+	})
+
+	\$(document).on("click","input:checkbox",function() {        
+	    \$(this).parent(".checkbox").toggleClass("checked")
+	})
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>check</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
