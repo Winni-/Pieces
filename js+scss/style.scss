@@ -31,3 +31,11 @@
         @include i-sprite(checkbox-chkd-custom);
     }
 }
+.select{
+    overflow: hidden;
+    @include inline-block;
+    select{
+        background: url(../img/select_arrow.png) #fff no-repeat center right 27px;
+        border: none;
+    }
+}
