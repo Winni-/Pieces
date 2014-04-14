@@ -7,10 +7,13 @@
 	    if (\$(this).attr("class")) {
 	        claz = \$(this).attr("class")
 	    };
+	    if(\$(this).is(":checked")){
+	        claz += " checked";
+	    }
 	    return "<div class='checkbox "+ claz +"'>";
 	})
 
-	\$(document).on("click","input:checkbox",function() {        
+	\$(document).on("click","input:checkbox",function() {
 	    \$(this).parent(".checkbox").toggleClass("checked")
 	})
 ]]></content>

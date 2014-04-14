@@ -5,10 +5,13 @@ $("input:checkbox").not(".checkbox input").wrap(function() {
     if ($(this).attr("class")) {
         claz = $(this).attr("class")
     };
+    if($(this).is(":checked")){
+        claz += " checked";
+    }
     return "<div class='checkbox "+ claz +"'>";
 })
 
-$(document).on("click","input:checkbox",function() {        
+$(document).on("click","input:checkbox",function() {
     $(this).parent(".checkbox").toggleClass("checked")
 })
 
@@ -18,13 +21,16 @@ $("input:radio").not(".radio input").wrap(function() {
     if ($(this).attr("class")) {
         claz = $(this).attr("class")
     };
+    if($(this).is(":checked")){
+        claz += " checked";
+    }
     return "<div class='radio "+claz +"'>";
 })
 $("input:radio").click(function() {
     name = $(this).attr("name");
     $("input:radio[name="+ name +"]").parent(".radio").removeClass("checked");
     $(this).parent(".radio").addClass("checked")
-})
+}) 
 
 //select
 $("select").not(".select select").wrap(function() {
